@@ -1,0 +1,20 @@
+a{
+    cursor: pointer;
+    color: black;
+}
+
+a:hover{
+    background-color: #1DBFD1;
+    border-radius: 30px;
+}
+
+nav{
+    background-color: #2B8A95;
+}
+
+.exit{
+    color: red;
+}
+.into{
+    color: #ccc;
+}

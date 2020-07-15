@@ -1,0 +1,12 @@
+.col-md-3{
+    margin: 7px;
+}
+
+table {
+    width: 100%;
+}
+
+
+th.mat-sort-header-sorted {
+    color: black;
+}

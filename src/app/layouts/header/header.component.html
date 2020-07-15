@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light">
+  <a class="navbar-brand">
+    <svg class="bi bi-person-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+      <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+    </svg>
+    Usuario
+  </a>
+  
+  <a routerLink="/Golas">{{URL}}</a>
+  
+
+  <form class="form-inline">
+    <li class="navbar-brand">
+      <a class="nav-link active" routerLink="/">Inicio</a>
+    </li>    
+    <li *ngIf="admin" class="btn btn-outline-sucecss my-2 my-sm-0">
+      <a class="nav-link" routerLink="/user">Usuarios</a>
+    </li>
+    <li *ngIf="admin" class="btn btn-outline-sucecss my-2 my-sm-0">
+      <a class="nav-link" routerLink ="/products">Productos</a>
+    </li>
+    <li *ngIf="admin" class="btn btn-outline-sucecss my-2 my-sm-0">
+      <a class="nav-link" routerLink ="/rol">Roles</a>
+    </li>
+    <li *ngIf="admin" class="btn btn-outline-sucecss my-2 my-sm-0">
+      <a class="nav-link" routerLink ="/bill">Facturas</a>
+    </li>
+    <li *ngIf="login" routerLink="/article" (click)="siteOut()" class="btn btn-outline-sucecss my-2 my-sm-0">
+      <a  class="nav-link disabled">
+        <svg class="bi exit bi-box-arrow-in-right" width="3em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8.146 11.354a.5.5 0 0 1 0-.708L10.793 8 8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 1 8z"/>
+          <path fill-rule="evenodd" d="M13.5 14.5A1.5 1.5 0 0 0 15 13V3a1.5 1.5 0 0 0-1.5-1.5h-8A1.5 1.5 0 0 0 4 3v1.5a.5.5 0 0 0 1 0V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 5 13v-1.5a.5.5 0 0 0-1 0V13a1.5 1.5 0 0 0 1.5 1.5h8z"/>
+        </svg>
+      </a>
+    </li>
+
+    <li *ngIf="!login" routerLink="/login" class="btn btn-outline-sucecss my-2 my-sm-0">
+      <a  class="nav-link disabled">
+        <svg class="bi into bi-lock" width="3em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M11.5 8h-7a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1zm-7-1a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-7zm0-3a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+        </svg>
+      </a>
+    </li>
+    
+  </form>
+</nav>

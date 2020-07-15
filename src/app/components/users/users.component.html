@@ -1,0 +1,90 @@
+<div class="row">
+   <div class="card col-md-3">
+       <div class="card-header">
+           Crear usuario
+       </div>
+       <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <form [formGroup]="formBulder" >
+               <div class="form-group">
+                   <label for="exampleInputEmail1">Nombres y Apellidos</label>
+                   <input 
+                       type="text" 
+                       class="form-control"
+                       placeholder="Ejemplo"
+                       formControlName = "name"
+                       aria-describedby="emailHelp">
+                   <small id="emailHelp" class="form-text text-muted">Identifique usuario</small>
+                   
+                   <label for="exampleInputEmail1">Documento</label>
+                   <input 
+                       type="text" 
+                       class="form-control"
+                       placeholder="Ejemplo"
+                       formControlName = "document"
+                       aria-describedby="emailHelp">
+                   <small id="emailHelp" class="form-text text-muted">Documento de persona</small>
+                   
+                   <label for="exampleInputEmail1">Telefon</label>
+                   <input 
+                       type="text" 
+                       class="form-control"
+                       placeholder="Ejemplo"
+                       formControlName = "phone"
+                       aria-describedby="emailHelp">
+                   <small id="emailHelp" class="form-text text-muted">Telefono de persona</small>
+                   
+                   <label for="exampleInputEmail1">Cargo</label>
+                   <input 
+                       type="text" 
+                       class="form-control"
+                       placeholder="Vendedor"
+                       aria-describedby="emailHelp">
+                   <small id="emailHelp" class="form-text text-muted">Descriva el cargo</small>
+                   <label for="exampleInputEmail1">Rol</label>
+                   <select formControlName="rolid" *ngFor="let item of litRol" class="custom-select">                     
+                     <option value={{item.code}}>{{item.name}}</option>                    
+                   </select>
+                   <small id="emailHelp" class="form-text text-muted">Seleccione el rol.</small>
+                  
+                   <label for="exampleInputEmail1">Ocupacion</label>
+                   <input 
+                       type="text" 
+                       class="form-control"
+                       placeholder="Ejemplo"
+                       formControlName = "occupation"
+                       aria-describedby="emailHelp">
+                   <small id="emailHelp" class="form-text text-muted">Ocupacion de usuario</small>
+
+              </div>
+            </form>   
+               <footer>
+                   <button (click)="save()" class="btn btn-block btn-success">Guardar</button>
+               </footer>
+           </blockquote>
+       </div>
+   </div>
+
+   <div class="col-md-8">
+       <table class="table">
+           <thead>
+             <tr>
+               <th scope="col">Lista</th>                
+             </tr>
+           </thead>
+           <tbody *ngFor="let item of litUser">
+             <tr>
+               <th scope="row">{{item.name}}</th>
+               <td>{{item.document}}</td>
+               <td>{{item.rolid}}</td>
+               <td>{{item.state}}</td>
+             </tr>              
+           </tbody>
+       </table>
+   </div>
+</div>
+
+<br>
+<br><br>
+<br>
+

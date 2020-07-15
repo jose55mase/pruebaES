@@ -1,0 +1,200 @@
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <svg width="3em" (click)="updateState()" style="color: yellow" height="3em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>
+            <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/>
+        </svg>
+        <svg *ngIf="!createClient" data-toggle="modal"  data-target="#exampleModal" width="3em" height="3em" style="color: red" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+        </svg>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+        <svg width="3em" height="3em" style="color: green" viewBox="0 0 16 16" class="bi bi-layers-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.188 8L.264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l-4.578 2.441a.5.5 0 0 1-.47 0L3.188 8z"/>
+            <path fill-rule="evenodd" d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4zM1.563 6L8 9.433 14.438 6 8 2.567 1.562 6z"/>
+        </svg>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-3"></div>
+
+    <div class="card col-md-6">
+        <div class="card-header">
+            Empleado
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+
+                <!-- SHOW -->
+                <div *ngIf="showClient">
+                    <form [formGroup]="formBulder">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre completo</label>
+                            <input
+                                disabled
+                                formControlName = "employeeName"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                           
+                            <label for="exampleInputEmail1">Edad</label>
+                            <input
+                                disabled
+                                formControlName = "employeeAge"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                           
+                            <label for="exampleInputEmail1">Salario</label>
+                            <input
+                                disabled
+                                formControlName = "employeeSalary"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                        
+                            <label for="exampleInputEmail1">Imagen</label>
+                            <input
+                                disabled 
+                                formControlName = "profileImage"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                        </div>
+                    </form>
+                </div>
+
+                <div *ngIf="editClient">
+                    <form [formGroup]="formBulder">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre completo</label>
+                            <input
+                                formControlName = "employeeName"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                            
+                            <label for="exampleInputEmail1">Edad</label>
+                            <input
+                                formControlName = "employeeAge"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                            
+                            <label for="exampleInputEmail1">Salario</label>
+                            <input
+                                formControlName = "employeeSalary"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                        
+                            <label for="exampleInputEmail1">Imagen</label>
+                            <input
+                                formControlName = "profileImage"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                        </div>
+                    </form>
+                </div>
+
+                <div *ngIf="createClient">
+                    <form [formGroup]="formBulder">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre completo</label>
+                            <input
+                                formControlName = "employeeName"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                            
+                            <label for="exampleInputEmail1">Edad</label>
+                            <input
+                                formControlName = "employeeAge"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                            
+                            <label for="exampleInputEmail1">Salario</label>
+                            <input
+                                formControlName = "employeeSalary"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                        
+                            <label for="exampleInputEmail1">Imagen</label>
+                            <input
+                                formControlName = "profileImage"
+                                type="text" 
+                                class="form-control"
+                                placeholder=""
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">...</small>
+                        </div>
+                    </form>
+                </div>
+
+                
+                <footer>
+                    <button *ngIf="createClient" [disabled]="!formBulder.valid" (click)="save()" class="btn btn-block btn-success">Guardar</button>
+                    <button *ngIf="editClient"  [disabled]="!formBulder.valid" (click)="update()" class="btn btn-block btn-warning">Editar</button>
+                    <button  (click)="cancel()" class="btn btn-block btn-danger">Cancelar</button>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="col-md-3"></div>
+</div>
+
+
+<!-- 
+    https://image.dhgate.com/0x0s/f2-albu-g6-M00-42-95-rBVaSFvT25yAfGAcAAoM0bZaA3I077.jpg/dise-o-de-botones-camisetas-casual-para-hombre.jpg
+-->
+
+
+<!-- Modal -->
+<div class="modal fade" style="width: 300px" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Esta serguro ?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <button type="button" data-dismiss="modal" (click)="deleteData()" class="btn btn-block btn-danger">Confirmar</button>
+           
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+        </div>
+        </div>
+    </div>
+</div>
